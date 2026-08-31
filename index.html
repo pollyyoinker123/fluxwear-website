@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FLUXWEAR — Streetwear</title>
+<style>
+:root{--bg:#f7f7f5;--text:#111;--muted:#777;--card:#fff;--line:#ddd}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+header{position:sticky;top:0;z-index:10;background:rgba(247,247,245,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{max-width:1150px;margin:auto;padding:18px 22px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:24px;font-weight:900;letter-spacing:3px}.links{display:flex;gap:25px}.links a{color:#111;text-decoration:none;font-size:14px;font-weight:700}
+.cart{border:1px solid #111;border-radius:999px;padding:9px 14px;background:#111;color:#fff;cursor:pointer}
+.hero{min-height:75vh;display:grid;place-items:center;text-align:center;padding:80px 20px;background:linear-gradient(135deg,#e8e8e5,#fff)}
+.hero h1{font-size:clamp(55px,10vw,120px);margin:0;letter-spacing:-6px}.hero p{font-size:18px;color:#555;max-width:550px;margin:20px auto 30px}
+.btn{display:inline-block;background:#111;color:#fff;padding:14px 24px;border-radius:4px;text-decoration:none;font-weight:800;border:0;cursor:pointer}
+section{max-width:1150px;margin:auto;padding:75px 22px}.title{display:flex;justify-content:space-between;align-items:end;margin-bottom:30px}.title h2{font-size:38px;margin:0}.title span{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.product{background:var(--card);border:1px solid var(--line);overflow:hidden}.pic{height:360px;background:#e5e5e2;display:grid;place-items:center;font-weight:900;font-size:42px;letter-spacing:2px}.info{padding:18px}.info h3{margin:0 0 8px}.price{font-weight:800;margin-bottom:15px}.add{width:100%;padding:12px;border:1px solid #111;background:#111;color:#fff;cursor:pointer}
+.about{background:#111;color:#fff;max-width:none}.about-inner{max-width:1150px;margin:auto;padding:75px 22px}.about p{max-width:650px;color:#ccc;line-height:1.7}
+.contact{text-align:center}.contact p{color:#666}.footer{border-top:1px solid var(--line);padding:30px 22px;text-align:center;color:#777;font-size:13px}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:20;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.box{background:#fff;width:min(500px,100%);padding:28px;max-height:90vh;overflow:auto}.box h2{margin-top:0}.close{float:right;border:0;background:none;font-size:25px;cursor:pointer}.cart-row{display:flex;justify-content:space-between;border-bottom:1px solid #ddd;padding:14px 0}.total{font-size:20px;font-weight:900;margin:20px 0}.form input,.form textarea{width:100%;padding:12px;margin:7px 0;border:1px solid #bbb;font:inherit}.form textarea{height:90px}
+@media(max-width:750px){.links{display:none}.grid{grid-template-columns:1fr 1fr}.pic{height:250px;font-size:30px}.hero h1{letter-spacing:-3px}}
+@media(max-width:480px){.grid{grid-template-columns:1fr}.pic{height:320px}}
+</style>
+
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+:root{--bg:#f3f2ee;--ink:#0b0b0b;--muted:#777;--line:#deddd8;--white:#fff}*{box-sizing:border-box}body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--ink)}header{background:#f3f2eeee;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{max-width:1240px;padding:12px 24px}.logo img{width:155px;max-height:58px;object-fit:contain}.links{gap:32px}.links a{font-size:11px;letter-spacing:1.5px}.cart{font-size:12px;font-weight:800}.hero{min-height:calc(100vh - 85px);background:radial-gradient(circle at 85% 15%,#fff 0 12%,transparent 32%),linear-gradient(135deg,#deddd7,#fafaf8);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:480px;height:480px;border-radius:50%;background:#c8c7c1;opacity:.45;left:-180px;bottom:-230px}.hero>div{position:relative;z-index:1}.hero-logo{width:min(500px,82vw);margin-bottom:5px}.hero p{font-size:14px;line-height:1.7}.hero p:first-of-type{font-size:10px;font-weight:800;letter-spacing:3px}.hero h1{font-size:clamp(46px,8vw,92px);font-weight:900;letter-spacing:-6px;line-height:.9}.btn{padding:15px 27px;font-size:11px;letter-spacing:1px}.section{max-width:1240px;padding:90px 24px}.title h2{font-size:42px;letter-spacing:-2px}.title span{font-size:10px;letter-spacing:2px;font-weight:800}.grid{gap:18px}.product{border:1px solid #ddd;transition:.25s}.product:hover{transform:translateY(-5px);box-shadow:0 18px 40px #00000012}.pic{height:410px;background:linear-gradient(135deg,#d8d7d2,#f7f7f5);position:relative}.pic:after{content:"";position:absolute;inset:12px;border:1px solid #ffffff88}.info{padding:19px}.info h3{font-size:15px}.price{font-size:14px}.add{font-size:11px;font-weight:800;letter-spacing:1px}.about{background:#0b0b0b}.about-inner{max-width:1240px;padding:90px 24px}.about h2{font-size:clamp(42px,6vw,74px);letter-spacing:-4px}.about p{font-size:15px;line-height:1.8}.contact{max-width:760px}.contact h2{font-size:40px;letter-spacing:-2px}.footer{background:#0b0b0b;color:#fff;border-top:0}.modal .box{border-radius:0}.modal{backdrop-filter:blur(4px)}
+@media(max-width:750px){.grid{grid-template-columns:1fr 1fr}.pic{height:280px}.links{display:none}}@media(max-width:480px){.grid{grid-template-columns:1fr}.pic{height:330px}.hero h1{letter-spacing:-4px}}
+</style></head>
+<body>
+<header><div class="nav">
+<div class="logo">FLUXWEAR</div>
+<nav class="links"><a href="#shop">SHOP</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a></nav>
+<button class="cart" onclick="openCart()">CART (<span id="count">0</span>)</button>
+</div></header>
+
+<main>
+<section class="hero">
+<div><p>FLUXWEAR · STREETWEAR</p><h1>MOVE<br>DIFFERENT.</h1><p>Clean silhouettes. Bold energy. Streetwear made for everyday movement.</p><a class="btn" href="#shop">SHOP THE DROP</a></div>
+</section>
+
+<section id="shop">
+<div class="title"><h2>SHOP</h2><span>03 PIECES · 01 COLLECTION</span></div>
+<div class="grid">
+<article class="product"><div class="pic">TEE</div><div class="info"><h3>Flux Essential Tee</h3><div class="price">$29.99 CAD</div><button class="add" onclick="add('Flux Essential Tee',29.99)">ADD TO CART</button></div></article>
+<article class="product"><div class="pic">HOODIE</div><div class="info"><h3>Flux Core Hoodie</h3><div class="price">$59.99 CAD</div><button class="add" onclick="add('Flux Core Hoodie',59.99)">ADD TO CART</button></div></article>
+<article class="product"><div class="pic">CAP</div><div class="info"><h3>Flux Classic Cap</h3><div class="price">$24.99 CAD</div><button class="add" onclick="add('Flux Classic Cap',24.99)">ADD TO CART</button></div></article>
+</div>
+</section>
+
+<section class="about" id="about"><div class="about-inner"><h2>ABOUT FLUXWEAR</h2><p>FLUXWEAR is an independent streetwear concept built around clean design, comfortable fits, and a bold everyday attitude. Streetwear for people who move different.</p></div></section>
+
+<section class="contact" id="contact"><h2>GET IN TOUCH</h2><p>Have a question about an order or product?</p><a class="btn" href="mailto:youremail@example.com">EMAIL US</a></section>
+</main>
+
+<footer class="footer">© 2026 FLUXWEAR Clothing · Replace this text with your brand information.</footer>
+
+<div class="modal" id="modal"><div class="box"><button class="close" onclick="closeCart()">×</button><h2>Your Cart</h2><div id="items"></div><div class="total">Total: $<span id="total">0.00</span> CAD</div>
+<div class="form"><input id="name" placeholder="Your name"><input id="email" placeholder="Email"><textarea id="orderNote" placeholder="Order notes (sizes/colors)"></textarea>
+<button class="btn" style="width:100%" onclick="sendOrder()">PLACE ORDER</button></div>
+<p style="font-size:12px;color:#777">Demo checkout: this button opens an email with the order details. Replace the email address in the code with your own before launching.</p>
+</div></div>
+
+<script>
+let cart=[];
+function add(name,price){cart.push({name,price});render();alert(name+" added to cart!")}
+function render(){
+ document.getElementById('count').textContent=cart.length;
+ document.getElementById('items').innerHTML=cart.length?cart.map((x,i)=>`<div class="cart-row"><span>${x.name}</span><span>$${x.price.toFixed(2)} <button onclick="removeItem(${i})">×</button></span></div>`).join(''):'<p>Your cart is empty.</p>';
+ document.getElementById('total').textContent=cart.reduce((a,x)=>a+x.price,0).toFixed(2);
+}
+function removeItem(i){cart.splice(i,1);render()}
+function openCart(){document.getElementById('modal').classList.add('open');render()}
+function closeCart(){document.getElementById('modal').classList.remove('open')}
+function sendOrder(){
+ if(!cart.length)return alert("Your cart is empty.");
+ const name=document.getElementById('name').value.trim(), email=document.getElementById('email').value.trim(), note=document.getElementById('orderNote').value.trim();
+ if(!name||!email)return alert("Please enter your name and email.");
+ const order=cart.map(x=>x.name+" - $"+x.price.toFixed(2)).join("%0D%0A");
+ const total=cart.reduce((a,x)=>a+x.price,0).toFixed(2);
+ window.location.href=`mailto:youremail@example.com?subject=FLUXWEAR%20Order%20from%20${encodeURIComponent(name)}&body=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(email)}%0A%0AItems:%0A${order}%0A%0ATotal:%20$${total}%20CAD%0A%0ANotes:%20${encodeURIComponent(note)}`;
+}
+render();
+</script>
+</body>
+</html>
