@@ -1,87 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FLUXWEAR — Streetwear</title>
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FLUXWEAR — Move Different.</title>
 <style>
-:root{--bg:#f7f7f5;--text:#111;--muted:#777;--card:#fff;--line:#ddd}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
-header{position:sticky;top:0;z-index:10;background:rgba(247,247,245,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav{max-width:1150px;margin:auto;padding:18px 22px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-size:24px;font-weight:900;letter-spacing:3px}.links{display:flex;gap:25px}.links a{color:#111;text-decoration:none;font-size:14px;font-weight:700}
-.cart{border:1px solid #111;border-radius:999px;padding:9px 14px;background:#111;color:#fff;cursor:pointer}
-.hero{min-height:75vh;display:grid;place-items:center;text-align:center;padding:80px 20px;background:linear-gradient(135deg,#e8e8e5,#fff)}
-.hero h1{font-size:clamp(55px,10vw,120px);margin:0;letter-spacing:-6px}.hero p{font-size:18px;color:#555;max-width:550px;margin:20px auto 30px}
-.btn{display:inline-block;background:#111;color:#fff;padding:14px 24px;border-radius:4px;text-decoration:none;font-weight:800;border:0;cursor:pointer}
-section{max-width:1150px;margin:auto;padding:75px 22px}.title{display:flex;justify-content:space-between;align-items:end;margin-bottom:30px}.title h2{font-size:38px;margin:0}.title span{color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.product{background:var(--card);border:1px solid var(--line);overflow:hidden}.pic{height:360px;background:#e5e5e2;display:grid;place-items:center;font-weight:900;font-size:42px;letter-spacing:2px}.info{padding:18px}.info h3{margin:0 0 8px}.price{font-weight:800;margin-bottom:15px}.add{width:100%;padding:12px;border:1px solid #111;background:#111;color:#fff;cursor:pointer}
-.about{background:#111;color:#fff;max-width:none}.about-inner{max-width:1150px;margin:auto;padding:75px 22px}.about p{max-width:650px;color:#ccc;line-height:1.7}
-.contact{text-align:center}.contact p{color:#666}.footer{border-top:1px solid var(--line);padding:30px 22px;text-align:center;color:#777;font-size:13px}
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:20;align-items:center;justify-content:center;padding:20px}.modal.open{display:flex}.box{background:#fff;width:min(500px,100%);padding:28px;max-height:90vh;overflow:auto}.box h2{margin-top:0}.close{float:right;border:0;background:none;font-size:25px;cursor:pointer}.cart-row{display:flex;justify-content:space-between;border-bottom:1px solid #ddd;padding:14px 0}.total{font-size:20px;font-weight:900;margin:20px 0}.form input,.form textarea{width:100%;padding:12px;margin:7px 0;border:1px solid #bbb;font:inherit}.form textarea{height:90px}
-@media(max-width:750px){.links{display:none}.grid{grid-template-columns:1fr 1fr}.pic{height:250px;font-size:30px}.hero h1{letter-spacing:-3px}}
-@media(max-width:480px){.grid{grid-template-columns:1fr}.pic{height:320px}}
-</style>
-
-<style>
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
-:root{--bg:#f3f2ee;--ink:#0b0b0b;--muted:#777;--line:#deddd8;--white:#fff}*{box-sizing:border-box}body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--ink)}header{background:#f3f2eeee;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{max-width:1240px;padding:12px 24px}.logo img{width:155px;max-height:58px;object-fit:contain}.links{gap:32px}.links a{font-size:11px;letter-spacing:1.5px}.cart{font-size:12px;font-weight:800}.hero{min-height:calc(100vh - 85px);background:radial-gradient(circle at 85% 15%,#fff 0 12%,transparent 32%),linear-gradient(135deg,#deddd7,#fafaf8);position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:480px;height:480px;border-radius:50%;background:#c8c7c1;opacity:.45;left:-180px;bottom:-230px}.hero>div{position:relative;z-index:1}.hero-logo{width:min(500px,82vw);margin-bottom:5px}.hero p{font-size:14px;line-height:1.7}.hero p:first-of-type{font-size:10px;font-weight:800;letter-spacing:3px}.hero h1{font-size:clamp(46px,8vw,92px);font-weight:900;letter-spacing:-6px;line-height:.9}.btn{padding:15px 27px;font-size:11px;letter-spacing:1px}.section{max-width:1240px;padding:90px 24px}.title h2{font-size:42px;letter-spacing:-2px}.title span{font-size:10px;letter-spacing:2px;font-weight:800}.grid{gap:18px}.product{border:1px solid #ddd;transition:.25s}.product:hover{transform:translateY(-5px);box-shadow:0 18px 40px #00000012}.pic{height:410px;background:linear-gradient(135deg,#d8d7d2,#f7f7f5);position:relative}.pic:after{content:"";position:absolute;inset:12px;border:1px solid #ffffff88}.info{padding:19px}.info h3{font-size:15px}.price{font-size:14px}.add{font-size:11px;font-weight:800;letter-spacing:1px}.about{background:#0b0b0b}.about-inner{max-width:1240px;padding:90px 24px}.about h2{font-size:clamp(42px,6vw,74px);letter-spacing:-4px}.about p{font-size:15px;line-height:1.8}.contact{max-width:760px}.contact h2{font-size:40px;letter-spacing:-2px}.footer{background:#0b0b0b;color:#fff;border-top:0}.modal .box{border-radius:0}.modal{backdrop-filter:blur(4px)}
-@media(max-width:750px){.grid{grid-template-columns:1fr 1fr}.pic{height:280px}.links{display:none}}@media(max-width:480px){.grid{grid-template-columns:1fr}.pic{height:330px}.hero h1{letter-spacing:-4px}}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f5f4ef;color:#090909;font-family:Inter,Arial,sans-serif}a{text-decoration:none;color:inherit}
+.announce{height:34px;background:#090909;color:#fff;display:grid;place-items:center;font-size:9px;font-weight:800;letter-spacing:2px}
+header{position:sticky;top:0;z-index:20;background:#f5f4eff2;backdrop-filter:blur(14px);border-bottom:1px solid #ddd}
+.nav{max-width:1240px;height:72px;margin:auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between}.logo{width:145px}.links{display:flex;gap:30px;font-size:10px;font-weight:800;letter-spacing:1.5px}.cart{border:0;background:#090909;color:white;border-radius:30px;padding:11px 17px;font-size:10px;font-weight:800}
+.hero{min-height:calc(100vh - 106px);display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#d9d8d2,#fafaf8 50%,#c8c7c0)}.hero:before,.hero:after{content:"";position:absolute;border-radius:50%}.hero:before{width:650px;height:650px;right:-260px;top:-280px;background:#fff9}.hero:after{width:500px;height:500px;left:-260px;bottom:-280px;background:#999;opacity:.18}.heroIn{position:relative;z-index:1;padding:75px 20px}.eyebrow{font-size:9px;letter-spacing:3px;font-weight:900}.heroLogo{width:min(430px,82vw);margin:16px 0 5px}.hero h1{font-size:clamp(50px,8vw,100px);line-height:.86;letter-spacing:-6px;margin:12px 0 24px}.hero p{max-width:560px;margin:0 auto 30px;color:#555;font-size:14px;line-height:1.8}.cta{display:inline-block;background:#090909;color:#fff;padding:15px 24px;font-size:10px;font-weight:900;letter-spacing:1.5px;transition:.2s}.cta:hover{transform:translateY(-3px);background:#333}
+.section{max-width:1240px;margin:auto;padding:90px 22px}.head{display:flex;justify-content:space-between;align-items:end;margin-bottom:28px}.head h2{font-size:42px;letter-spacing:-2.5px;margin:0}.head span{font-size:9px;color:#777;font-weight:800;letter-spacing:1.4px}.filters{display:flex;gap:7px;margin-bottom:20px}.filter{border:1px solid #bbb;background:transparent;padding:9px 13px;font-size:9px;font-weight:900}.filter.active,.filter:hover{background:#090909;color:#fff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fff;border:1px solid #ddd;overflow:hidden;transition:.25s}.card:hover{transform:translateY(-5px);box-shadow:0 20px 40px #0001}.photoVisual{height:430px;background:#fff;position:relative;display:grid;place-items:center;overflow:hidden}.photoVisual img{width:100%;height:100%;object-fit:contain;display:block}.photoBtns{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;background:#fffffff0;padding:5px}.photoBtns button{border:1px solid #aaa;background:#fff;padding:8px 11px;font-size:8px;font-weight:900;letter-spacing:1px}.photoBtns button:hover{background:#090909;color:#fff;border-color:#090909}.photoVisual .tag{z-index:3}.visual{height:430px;display:grid;place-items:center;position:relative}.v1{background:linear-gradient(135deg,#d8d7d1,#f5f4ef)}.v2{background:linear-gradient(135deg,#151515,#515151)}.v3{background:linear-gradient(135deg,#bdbcb5,#e7e6e0)}.tag{position:absolute;top:15px;left:15px;background:#fff;padding:8px 10px;font-size:8px;font-weight:900;z-index:2}.shirt,.hoodie{width:48%;height:68%;filter:drop-shadow(0 25px 18px #0005);position:relative}.shirt{background:#111;clip-path:polygon(22% 0,39% 9%,61% 9%,78% 0,100% 24%,82% 39%,77% 100%,23% 100%,18% 39%,0 24%)}.hoodie{background:#171717;clip-path:polygon(27% 0,42% 9%,58% 9%,73% 0,94% 18%,82% 37%,76% 100%,24% 100%,18% 37%,6% 18%)}.shirt:after,.hoodie:after{content:"FLUX";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-7deg);color:#fff;font-weight:900;font-size:28px}.cap{width:58%;height:30%;background:#111;border-radius:55% 55% 25% 25%;position:relative;filter:drop-shadow(0 25px 15px #0005)}.cap:after{content:"";position:absolute;width:60%;height:28%;right:-27%;bottom:-8%;background:#090909;border-radius:0 80% 80% 0;transform:rotate(-5deg)}.cap:before{content:"F";position:absolute;z-index:2;left:50%;top:47%;transform:translate(-50%,-50%);color:#fff;font-size:27px;font-weight:900}
+.info{padding:18px}.row{display:flex;justify-content:space-between;gap:10px}.name{font-size:14px;font-weight:800}.price{font-size:14px;font-weight:700}.desc{font-size:10px;color:#777;margin:8px 0 14px}.add{width:100%;border:0;background:#090909;color:#fff;padding:12px;font-size:9px;font-weight:900;letter-spacing:1.2px}
+.story{background:#090909;color:#fff}.storyIn{max-width:1240px;margin:auto;padding:95px 22px;display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.story h2{font-size:clamp(52px,7vw,92px);line-height:.84;letter-spacing:-6px;margin:12px 0}.story p{max-width:560px;color:#aaa;font-size:14px;line-height:1.85}.stats{display:flex;gap:45px;margin-top:28px}.stats strong{font-size:28px;display:block}.stats small{font-size:8px;color:#777;letter-spacing:1.5px}
+.quote{text-align:center}.quote h2{font-size:clamp(28px,4vw,48px);letter-spacing:-2px;max-width:850px;line-height:1.1;margin:0 auto 18px}.quote p{font-size:9px;color:#777;letter-spacing:2px;font-weight:800}.news{background:#deddd7}.newsIn{max-width:700px;margin:auto;padding:75px 22px;text-align:center}.news h2{font-size:38px;margin:0 0 10px}.news p{font-size:13px;color:#666}.signup{display:flex;margin-top:24px}.signup input{flex:1;border:1px solid #aaa;border-right:0;padding:14px;background:#fff}.signup button{border:1px solid #090909;background:#090909;color:#fff;padding:0 22px;font-size:10px;font-weight:900}
+footer{background:#090909;color:#fff;padding:55px 22px}.foot{max-width:1240px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:35px}.footLogo{width:165px;filter:invert(1)}footer p,footer a{color:#999;font-size:10px;line-height:1.8}footer a{display:block}.copy{max-width:1240px;margin:45px auto 0;border-top:1px solid #282828;padding-top:18px;color:#666;font-size:8px}
+.modal{display:none;position:fixed;inset:0;background:#0009;z-index:50}.modal.open{display:flex}.drawer{margin-left:auto;width:min(480px,100%);height:100%;background:#f7f7f3;padding:25px;overflow:auto}.drawerHead{display:flex;justify-content:space-between}.drawer h2{margin:0;font-size:25px}.close{border:0;background:none;font-size:30px}.item{border-bottom:1px solid #ddd;padding:15px 0}.itemTop{display:flex;justify-content:space-between}.itemName{font-size:12px;font-weight:800}.itemMeta{font-size:9px;color:#777;margin-top:4px}.remove{background:none;border:0;text-decoration:underline;font-size:9px;margin-top:9px}.total{display:flex;justify-content:space-between;font-size:17px;font-weight:900;padding:20px 0}.form input,.form select,.form textarea{width:100%;border:1px solid #bbb;background:#fff;padding:12px;margin:4px 0}.form textarea{height:70px}.note{font-size:9px;color:#777;line-height:1.5}.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,120px);background:#090909;color:#fff;padding:13px 18px;font-size:10px;font-weight:800;z-index:100;transition:.25s}.toast.show{transform:translate(-50%,0)}
+@media(max-width:800px){.links{display:none}.grid{grid-template-columns:1fr 1fr}.storyIn{grid-template-columns:1fr;gap:20px}.foot{grid-template-columns:1fr 1fr}}@media(max-width:520px){.nav{padding:0 14px}.logo{width:125px}.section{padding:65px 15px}.grid{grid-template-columns:1fr}.visual{height:390px}.head h2{font-size:34px}.head span{display:none}.hero h1{letter-spacing:-4px}.signup{flex-direction:column;gap:8px}.signup input{border-right:1px solid #aaa;padding:14px}.signup button{padding:14px}.foot{grid-template-columns:1fr}.story h2{letter-spacing:-4px}}
 </style></head>
 <body>
-<header><div class="nav">
-<div class="logo">FLUXWEAR</div>
-<nav class="links"><a href="#shop">SHOP</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a></nav>
-<button class="cart" onclick="openCart()">CART (<span id="count">0</span>)</button>
-</div></header>
-
-<main>
-<section class="hero">
-<div><p>FLUXWEAR · STREETWEAR</p><h1>MOVE<br>DIFFERENT.</h1><p>Clean silhouettes. Bold energy. Streetwear made for everyday movement.</p><a class="btn" href="#shop">SHOP THE DROP</a></div>
-</section>
-
-<section id="shop">
-<div class="title"><h2>SHOP</h2><span>03 PIECES · 01 COLLECTION</span></div>
-<div class="grid">
-<article class="product"><div class="pic">TEE</div><div class="info"><h3>Flux Essential Tee</h3><div class="price">$29.99 CAD</div><button class="add" onclick="add('Flux Essential Tee',29.99)">ADD TO CART</button></div></article>
-<article class="product"><div class="pic">HOODIE</div><div class="info"><h3>Flux Core Hoodie</h3><div class="price">$59.99 CAD</div><button class="add" onclick="add('Flux Core Hoodie',59.99)">ADD TO CART</button></div></article>
-<article class="product"><div class="pic">CAP</div><div class="info"><h3>Flux Classic Cap</h3><div class="price">$24.99 CAD</div><button class="add" onclick="add('Flux Classic Cap',24.99)">ADD TO CART</button></div></article>
-</div>
-</section>
-
-<section class="about" id="about"><div class="about-inner"><h2>ABOUT FLUXWEAR</h2><p>FLUXWEAR is an independent streetwear concept built around clean design, comfortable fits, and a bold everyday attitude. Streetwear for people who move different.</p></div></section>
-
-<section class="contact" id="contact"><h2>GET IN TOUCH</h2><p>Have a question about an order or product?</p><a class="btn" href="mailto:youremail@example.com">EMAIL US</a></section>
-</main>
-
-<footer class="footer">© 2026 FLUXWEAR Clothing · Replace this text with your brand information.</footer>
-
-<div class="modal" id="modal"><div class="box"><button class="close" onclick="closeCart()">×</button><h2>Your Cart</h2><div id="items"></div><div class="total">Total: $<span id="total">0.00</span> CAD</div>
-<div class="form"><input id="name" placeholder="Your name"><input id="email" placeholder="Email"><textarea id="orderNote" placeholder="Order notes (sizes/colors)"></textarea>
-<button class="btn" style="width:100%" onclick="sendOrder()">PLACE ORDER</button></div>
-<p style="font-size:12px;color:#777">Demo checkout: this button opens an email with the order details. Replace the email address in the code with your own before launching.</p>
-</div></div>
-
+<div class="announce">FREE SHIPPING OVER $75 CAD · NEW DROP LIVE</div>
+<header><nav class="nav"><a href="#"><img class="logo" src="fluxwear-logo.png" alt="FLUXWEAR"></a><div class="links"><a href="#shop">SHOP</a><a href="#story">OUR STORY</a><a href="#contact">CONTACT</a></div><button class="cart" onclick="openCart()">CART (<span id="count">0</span>)</button></nav></header>
+<section class="hero"><div class="heroIn"><div class="eyebrow">INDEPENDENT STREETWEAR · EST. 2026</div><img class="heroLogo" src="fluxwear-logo.png" alt="FLUXWEAR"><h1>MOVE<br>DIFFERENT.</h1><p>Clean silhouettes. Comfortable fits. Bold everyday energy. Welcome to the first FLUXWEAR drop.</p><a class="cta" href="#shop">SHOP THE DROP →</a></div></section>
+<section class="section" id="shop"><div class="head"><h2>THE DROP</h2><span>03 PIECES · STARTER COLLECTION</span></div><div class="filters"><button class="filter active" onclick="filterCat('all',this)">ALL</button><button class="filter" onclick="filterCat('tops',this)">TOPS</button><button class="filter" onclick="filterCat('headwear',this)">HEADWEAR</button></div><div class="grid">
+<article class="card" data-cat="tops"><div class="photoVisual"><span class="tag">NEW DROP</span><img id="hoodiePhoto" src="flux-skate-hoodie-front.png" alt="FLUXWEAR white hoodie front"><div class="photoBtns"><button onclick="hoodieView('front')">FRONT</button><button onclick="hoodieView('back')">BACK</button></div></div><div class="info"><div class="row"><span class="name">Flux Skate Hoodie</span><span class="price">$59.99</span></div><div class="desc">Heavyweight hoodie · Relaxed fit · White · Front + back graphic</div><button class="add" onclick="choose('Flux Skate Hoodie',59.99,true)">SELECT SIZE</button></div></article>
+<article class="card" data-cat="tops"><div class="visual v2"><span class="tag">NEW</span><div class="hoodie"></div></div><div class="info"><div class="row"><span class="name">Flux Core Hoodie</span><span class="price">$59.99</span></div><div class="desc">Heavy fleece · Relaxed fit · Black</div><button class="add" onclick="choose('Flux Core Hoodie',59.99,true)">SELECT SIZE</button></div></article>
+<article class="card" data-cat="headwear"><div class="visual v3"><div class="cap"></div></div><div class="info"><div class="row"><span class="name">Flux Classic Cap</span><span class="price">$24.99</span></div><div class="desc">Structured cotton · Adjustable · Black</div><button class="add" onclick="choose('Flux Classic Cap',24.99,false)">ADD TO CART</button></div></article>
+</div></section>
+<section class="story" id="story"><div class="storyIn"><div><div class="eyebrow">THE FLUXWEAR IDEA</div><h2>BUILT<br>TO MOVE.</h2></div><div><p>FLUXWEAR is an independent streetwear concept focused on simple design, comfortable fits, and a bold everyday attitude. The first collection keeps things intentional: a few strong pieces, made to work together.</p><div class="stats"><div><strong>01</strong><small>FIRST DROP</small></div><div><strong>∞</strong><small>KEEP MOVING</small></div></div></div></div></section>
+<section class="section quote"><div class="eyebrow">FLUXWEAR COMMUNITY</div><h2>“YOUR STYLE DOESN'T NEED TO FIT A BOX.”</h2><p>MOVE DIFFERENT · WEAR FLUX</p></section>
+<section class="news" id="contact"><div class="newsIn"><h2>JOIN THE FLUX.</h2><p>Get early access to new drops and FLUXWEAR updates.</p><div class="signup"><input id="email" type="email" placeholder="Email address"><button onclick="subscribe()">JOIN</button></div></div></section>
+<footer><div class="foot"><div><img class="footLogo" src="fluxwear-logo.png" alt="FLUXWEAR"><p>Streetwear for people who move different.</p></div><div><b>SHOP</b><p><a href="#shop">All Products</a><a href="#shop">New Drop</a></p></div><div><b>INFO</b><p><a href="#story">Our Story</a><a href="#contact">Contact</a></p></div><div><b>SOCIAL</b><p><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">YouTube</a></p></div></div><div class="copy">© 2026 FLUXWEAR. ALL RIGHTS RESERVED.</div></footer>
+<div class="modal" id="modal"><aside class="drawer"><div class="drawerHead"><h2>YOUR CART</h2><button class="close" onclick="closeCart()">×</button></div><div id="items"></div><div class="total"><span>TOTAL</span><span>$<span id="total">0.00</span> CAD</span></div><div class="form"><input id="name" placeholder="Full name"><input id="customerEmail" type="email" placeholder="Email address"><select id="size"><option value="">Choose a size</option><option>XS</option><option>S</option><option>M</option><option>L</option><option>XL</option></select><textarea id="notes" placeholder="Order notes"></textarea><button class="cta" style="width:100%;border:0" onclick="placeOrder()">PLACE ORDER →</button></div><p class="note">Free version: orders are sent through your email app. Replace <b>youremail@example.com</b> in the file with your real order email before launch. Card payments require a payment provider.</p></aside></div>
+<div class="toast" id="toast">Added to cart</div>
 <script>
-let cart=[];
-function add(name,price){cart.push({name,price});render();alert(name+" added to cart!")}
-function render(){
- document.getElementById('count').textContent=cart.length;
- document.getElementById('items').innerHTML=cart.length?cart.map((x,i)=>`<div class="cart-row"><span>${x.name}</span><span>$${x.price.toFixed(2)} <button onclick="removeItem(${i})">×</button></span></div>`).join(''):'<p>Your cart is empty.</p>';
- document.getElementById('total').textContent=cart.reduce((a,x)=>a+x.price,0).toFixed(2);
-}
-function removeItem(i){cart.splice(i,1);render()}
-function openCart(){document.getElementById('modal').classList.add('open');render()}
-function closeCart(){document.getElementById('modal').classList.remove('open')}
-function sendOrder(){
- if(!cart.length)return alert("Your cart is empty.");
- const name=document.getElementById('name').value.trim(), email=document.getElementById('email').value.trim(), note=document.getElementById('orderNote').value.trim();
- if(!name||!email)return alert("Please enter your name and email.");
- const order=cart.map(x=>x.name+" - $"+x.price.toFixed(2)).join("%0D%0A");
- const total=cart.reduce((a,x)=>a+x.price,0).toFixed(2);
- window.location.href=`mailto:youremail@example.com?subject=FLUXWEAR%20Order%20from%20${encodeURIComponent(name)}&body=Name:%20${encodeURIComponent(name)}%0AEmail:%20${encodeURIComponent(email)}%0A%0AItems:%0A${order}%0A%0ATotal:%20$${total}%20CAD%0A%0ANotes:%20${encodeURIComponent(note)}`;
-}
-render();
-</script>
-</body>
-</html>
+let cart=[];const $=id=>document.getElementById(id);
+function filterCat(cat,b){document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.card').forEach(c=>c.style.display=cat==='all'||c.dataset.cat===cat?'block':'none')}
+function choose(n,p,sized){let size='One size';if(sized){size=prompt('Choose a size: XS, S, M, L, or XL','M');if(!size)return;size=size.toUpperCase();if(!['XS','S','M','L','XL'].includes(size))return alert('Please choose XS, S, M, L, or XL.')}cart.push({n,p,size});render();toast(n+' added to cart')}
+function render(){$('count').textContent=cart.length;$('items').innerHTML=cart.length?cart.map((x,i)=>`<div class="item"><div class="itemTop"><span class="itemName">${x.n}</span><b>$${x.p.toFixed(2)}</b></div><div class="itemMeta">Size: ${x.size}</div><button class="remove" onclick="removeItem(${i})">Remove</button></div>`).join(''):'<p style="color:#777;font-size:13px">Your cart is empty.</p>';$('total').textContent=cart.reduce((a,x)=>a+x.p,0).toFixed(2)}
+function removeItem(i){cart.splice(i,1);render()}function openCart(){render();$('modal').classList.add('open')}function closeCart(){$('modal').classList.remove('open')}
+function toast(t){$('toast').textContent=t;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),1700)}
+function placeOrder(){if(!cart.length)return alert('Your cart is empty.');let n=$('name').value.trim(),e=$('customerEmail').value.trim();if(!n||!e)return alert('Please enter your name and email.');let body='Name: '+n+'%0AEmail: '+e+'%0A%0AItems:%0A'+cart.map(x=>x.n+' — '+x.size+' — $'+x.p.toFixed(2)).join('%0A')+'%0A%0ATotal: $'+cart.reduce((a,x)=>a+x.p,0).toFixed(2)+' CAD%0A%0ANotes: '+encodeURIComponent($('notes').value);location.href='mailto:youremail@example.com?subject=FLUXWEAR%20Order&body='+body}
+function hoodieView(side){$('hoodiePhoto').src=side==='back'?'flux-skate-hoodie-back.png':'flux-skate-hoodie-front.png'}
+function subscribe(){let e=$('email').value.trim();if(!e)return alert('Enter your email address.');$('email').value='';toast('Welcome to the FLUX.')}render();
+</script></body></html>
